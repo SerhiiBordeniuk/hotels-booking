@@ -1,0 +1,39 @@
+@import '../../style/variables.scss';
+
+
+  .app__header {
+  background-image: url(../../resources/img/bedroom.jpg); 
+  padding-left: 213px;
+  padding-right: 213px;
+  width: 1920px;
+  height: 1080px;
+  width: 100%;
+  .app__header__layout {
+    display: flex;
+    justify-content: space-between;
+  }
+  .app__menu {
+    list-style-type: none;
+  }
+  .app__title {
+    width: 256px;
+    height: 149px;
+    background-color: #E0B973;
+    border-radius: 0px 0px 30px 30px; //поменять
+    text-transform: uppercase;
+    color: $main-font-color;
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+    font-size: 15px;
+    letter-spacing:10px;
+    h2 {
+      margin: auto;
+    }
+    span {
+      font-size: 40px;
+      letter-spacing: 6px;
+      margin-top: 30px;
+    }
+  }
+}

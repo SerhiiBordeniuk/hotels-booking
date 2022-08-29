@@ -1,0 +1,21 @@
+@import url('https://fonts.google.com/specimen/Slabo+27px');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app__title {
+  font-family: 'Slabo', normal; 
+}
+
+
+.app {
+    position: absolute;
+    width: 1920px;
+    height: 6292px;
+    width: 100%;
+    // max-width: 100%;
+    
+}
