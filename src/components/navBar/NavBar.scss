@@ -1,0 +1,41 @@
+@import "../../style/variables.scss";
+
+.app__navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  .nav__links {
+    display: flex;
+    font-family: "Montserrat", sans-serif;
+    font-size: 25px;
+    padding-top: 59px;
+    .nav__links_button {
+        height: 30px;
+        color: #ffffff;
+        text-decoration: none;
+        margin-left: 95px;
+    }
+  }
+  .app__title {
+    width: 256px;
+    height: 149px;
+    background-color: #e0b973;
+    border-radius: 0px 0px 30px 30px; //поменять
+    text-transform: uppercase;
+    color: $main-font-color;
+    text-align: center;
+    display: flex;
+    vertical-align: middle;
+    font-size: 15px;
+    letter-spacing: 10px;
+    h2 {
+        margin: auto;
+    }
+    span {
+        font-size: 40px;
+        letter-spacing: 6px;
+        margin-top: 30px;
+    }
+  }
+}

@@ -1,39 +1,75 @@
-@import '../../style/variables.scss';
+@import "../../style/variables.scss";
+@import "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
 
-
-  .app__header {
-  background-image: url(../../resources/img/bedroom.jpg); 
-  padding-left: 213px;
-  padding-right: 213px;
-  width: 1920px;
-  height: 1080px;
-  width: 100%;
-  .app__header__layout {
-    display: flex;
-    justify-content: space-between;
-  }
-  .app__menu {
-    list-style-type: none;
-  }
-  .app__title {
-    width: 256px;
-    height: 149px;
-    background-color: #E0B973;
-    border-radius: 0px 0px 30px 30px; //поменять
-    text-transform: uppercase;
-    color: $main-font-color;
-    text-align: center;
-    display: flex;
-    vertical-align: middle;
-    font-size: 15px;
-    letter-spacing:10px;
-    h2 {
-      margin: auto;
+// .app__header {
+// }
+.app__header__inner {
+    background-image: url(../../resources/img/bedroom.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    width: 100%;
+    height: 100vh;
+    .header__content_container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0 213px;
+        padding-top: 100px;
     }
-    span {
-      font-size: 40px;
-      letter-spacing: 6px;
-      margin-top: 30px;
+    // background-size: cover;
     }
-  }
-}
+    .app__info {
+        margin-top: 150px;
+        color: #ffffff;
+        .app__title__normal {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-size: 50px;
+            text-transform: uppercase;
+            .app__title__bold {
+                font-family: "Slabo", normal;
+                font-size: 154px;
+                line-height: 185px;
+                letter-spacing: 0.07em;
+            }
+            .app__title__bold_small {
+                font-family: "Slabo", normal;
+                font-size: 60px;
+                line-height: 72px;
+                letter-spacing: 0.4em;
+            }
+        }
+        .app__header-text {
+            font-family: "Montserrat";
+            font-style: normal;
+            font-weight: 400;
+            font-size: 25px;
+            line-height: 30px;
+            letter-spacing: 0.1em;
+        }
+    }
+    .scroll {
+        align-self: center;
+        margin-top: 120px;
+        width: 79px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        color: #ffffff;
+        font-weight: 700;
+        font-family: "Montserrat";
+        font-size: 25px;
+        line-height: 30px;
+        letter-spacing: 0.05em;
+        .circle {
+            display: flex;
+            margin-top: 20px;
+            margin-bottom: 35px;
+            width: 60px;
+            height: 60px;
+            background: #ffffff;
+            border-radius: 30px;
+        }
+    }
