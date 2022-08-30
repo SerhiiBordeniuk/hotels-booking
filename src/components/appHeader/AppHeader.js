@@ -1,8 +1,9 @@
 import "./AppHeader.scss";
+import icon from "../../resources/img/icon.png";
 
 const AppHeader = () => {
     return (
-        <div className="AppHeader">
+        <div className="app__header">
             <header className="app__header__inner">
                 <div className="header__content_container">
                     <div className="app__info">
@@ -17,9 +18,7 @@ const AppHeader = () => {
                     </div>
                     <div className="scroll">
                         <p>Scroll</p>
-                        <div className="circle">
-                            <p></p>
-                        </div>
+                        <img className="icon" src={icon} />
                     </div>
                 </div>
             </header>

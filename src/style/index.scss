@@ -1,19 +1,20 @@
-@import url('https://fonts.google.com/specimen/Slabo+27px');
+@import url("https://fonts.google.com/specimen/Slabo+27px");
+@import "https://fonts.googleapis.com/css2?family=Montserrat&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Roboto&display=swap";
+@import "https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap";
 
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 .app__title {
-  font-family: 'Slabo', normal; 
+    font-family: "Slabo", normal;
 }
-
 
 .app {
     position: absolute;
     width: 100%;
     max-width: 100%;
-    
 }
