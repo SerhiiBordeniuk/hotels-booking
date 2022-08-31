@@ -31,7 +31,7 @@ const RoomsList = () => {
                                 <div className="rooms__price">$147</div>
                             </div>
                             <div className="rooms_button_delete">
-                                <img className="trash__icon" src={trash} />
+                                <input className="trash__icon" type="image" src={trash} />
                             </div>
                         </div>
                     </li>
@@ -48,7 +48,7 @@ const RoomsList = () => {
                                 <div className="rooms__price">$147</div>
                             </div>
                             <div className="rooms_button_delete">
-                                <img className="trash__icon" src={trash} />
+                                <input className="trash__icon" type="image" src={trash} />
                             </div>
                         </div>
                     </li>
@@ -65,11 +65,15 @@ const RoomsList = () => {
                                 <div className="rooms__price">$147</div>
                             </div>
                             <div className="rooms_button_delete">
-                                <img className="trash__icon" src={trash} />
+                                <input className="trash__icon" type="image" src={trash} />
                             </div>
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div className="buy__container">
+                <h2 className="price__total">Total price: $0</h2>
+                <button className="buy__button">Buy</button>
             </div>
         </div>
     );
