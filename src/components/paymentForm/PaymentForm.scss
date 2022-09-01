@@ -58,6 +58,10 @@
                         outline: 1px solid $main-font-color;
                     }
                 }
+                .error {
+                    font-size: 15px;
+                    color: red;
+                }
             }
             .payment_button {
                 margin-top: 20px;

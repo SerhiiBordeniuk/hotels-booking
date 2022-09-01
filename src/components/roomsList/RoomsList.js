@@ -4,6 +4,8 @@ import singleroom from "../../resources/img/singleroom.jpg";
 import doubleroom from "../../resources/img/doubleroom.jpg";
 import twinroom from "../../resources/img/twinroom.jpg";
 
+import { Link } from "react-router-dom";
+
 const RoomsList = () => {
     return (
         <div className="rooms__list">
@@ -73,7 +75,7 @@ const RoomsList = () => {
             </div>
             <div className="buy__container">
                 <h2 className="price__total">Total price: $0</h2>
-                <button className="buy__button">Buy</button>
+                <Link to="/payment" className="buy__button">Buy</Link>
             </div>
         </div>
     );
