@@ -5,7 +5,7 @@ const RoomsPage = () => {
     return (
         <>
             <AppHeader />
-            {/* <RoomsList /> */}
+            <RoomsList />
         </>
     );
 };
