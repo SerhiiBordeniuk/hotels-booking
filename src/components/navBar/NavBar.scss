@@ -17,6 +17,11 @@
           text-decoration: none;
           margin-left: 95px;
       }
+      .nav__links_button:hover {
+        background-color:#e0b973;
+        border-radius: 5px;
+        color: $main-font-color;
+      }
     }
     .app__title {
       width: 256px;

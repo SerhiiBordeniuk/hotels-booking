@@ -83,7 +83,9 @@
                 border-radius: 50%;
                 border: 0;
                 background-color:#E0B973;
-                
+              }
+              .button:hover {
+                background-color:#c29747;
               }
             }
             .rooms__price {
@@ -134,6 +136,9 @@
       background-color: #E0B973;
       border-radius: 10px;
       padding: 24px 51px;
+    }
+    .buy__button:hover {
+      background-color:#c29747;
     }
   }
 }
