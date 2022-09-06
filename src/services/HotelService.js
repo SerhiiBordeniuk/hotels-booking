@@ -1,12 +1,9 @@
-const { default: axios } = require("axios")
+// import { useState } from "react";
+// const { default: axios } = require("axios");
 
+const useHotelService = () => {
 
-const HotelService = () => {
   
+};
 
-}
-
-export default HotelService;
-
-
-
+// export default useHotelService;

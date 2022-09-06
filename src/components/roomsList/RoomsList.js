@@ -1,8 +1,5 @@
 import "./RoomsList.scss";
 import trash from "../../resources/img/trash.png";
-import singleroom from "../../resources/img/singleroom.jpg";
-import doubleroom from "../../resources/img/doubleroom.jpg";
-import twinroom from "../../resources/img/twinroom.jpg";
 
 import Spinner from "../spinner/Spinner";
 
@@ -20,17 +17,21 @@ const RoomsList = () => {
 
     const getData = async () => {
         setLoading(true);
-        await axios.get("https://6308173c46372013f5762546.mockapi.io/hotels").then((res) => {
-            const allHotels = res.data;
-            setLoading(false);
-            return setHotelData(allHotels);
-        });
+        const res = await axios.get("https://6308173c46372013f5762546.mockapi.io/hotels")
+        setLoading(false);
+        setHotelData(res.data);
+    };
+
+    const onDelete = async (id) => {
+        const res = await axios
+            .delete(`https://6308173c46372013f5762546.mockapi.io/hotels/${id}`)
+            .then(setHotelData((data) => data.filter((item) => item.id !==id)));
     };
 
     const renderItems = (arr) => {
         const items = arr.map((item) => {
-            if (!Array.isArray(arr)) {
-                return <p>There was an error loading your data!</p>;
+            if (arr.length === 0) {
+                return <div>Array is empty</div>
             } else {
                 return (
                     <li className="room__item" key={item.id}>
@@ -46,7 +47,13 @@ const RoomsList = () => {
                                 <div className="rooms__price">{`$${item.price}`}</div>
                             </div>
                             <div className="rooms_button_delete">
-                                <input className="trash__icon" type="image" src={trash} />
+                                <input
+                                    key={item.id}
+                                    onClick={() => onDelete(item.id)}
+                                    className="trash__icon"
+                                    type="image"
+                                    src={trash}
+                                />
                             </div>
                         </div>
                     </li>
@@ -58,6 +65,7 @@ const RoomsList = () => {
     };
 
     const items = renderItems(hotelData);
+    console.log(loading);
     const spinner = loading ? <Spinner /> : null;
 
     return (
