@@ -3,8 +3,9 @@ import trash from "../../resources/img/trash.png";
 
 import Spinner from "../spinner/Spinner";
 
-import { Link } from "react-router-dom";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
 const { default: axios } = require("axios");
 
 const RoomsList = () => {
@@ -40,9 +41,9 @@ const RoomsList = () => {
                         <div className="room__interaction">
                             <div className="room__buttons">
                                 <div className="room__counter">
-                                    <button className="button inc">+</button>
+                                    <button className="button inc">-</button>
                                     <p className="counter">1</p>
-                                    <button className="button dec">-</button>
+                                    <button className="button dec">+</button>
                                 </div>
                                 <div className="rooms__price">{`$${item.price}`}</div>
                             </div>

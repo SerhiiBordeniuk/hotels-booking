@@ -75,6 +75,10 @@
                 cursor: pointer;
                 border: none;
             }
+            .payment_button:hover {
+                background-color:#c29747;
+            }
+            
         }
         .payment__header {
             display: flex;
