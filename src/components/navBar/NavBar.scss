@@ -1,47 +1,78 @@
 @import "../../style/variables.scss";
 
-  .app__navbar {
+.app__navbar {
     position: fixed;
     width: 100%;
     display: flex;
     justify-content: space-around;
-    background: #14274A;
+    background: #14274a;
     .nav__links {
-      display: flex;
-      font-family: "Montserrat", sans-serif;
-      font-size: 25px;
-      align-items: center;
-      .nav__links_button {
-          height: 30px;
-          color: #ffffff;
-          text-decoration: none;
-          margin-left: 95px;
-      }
-      .nav__links_button:hover {
-        background-color:#e0b973;
-        border-radius: 5px;
-        color: $main-font-color;
-      }
+        display: flex;
+        font-family: "Montserrat", sans-serif;
+        font-size: 25px;
+        align-items: center;
+        .nav__links_button {
+            height: 30px;
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 95px;
+        }
+        .nav__links_button:hover {
+            background-color: #e0b973;
+            border-radius: 5px;
+            color: $main-font-color;
+        }
+    }
+    .nav__cart {
+        color: #ffffff;
+        font-family: "Montserrat";
+        display: flex;
+        flex-direction: column;
+        align-items: self-end;
+        justify-content: center;
+        .price__total {
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 30px;
+            margin-right: 20px;
+        }
+        .buy__button {
+            text-decoration: none;
+            cursor: pointer;
+            color: #ffffff;
+            margin-top: 10px;
+            margin-right: 66px;
+            border: none;
+            font-weight: 700;
+            font-size: 25px;
+            line-height: 30px;
+            background-color: #e0b973;
+            border-radius: 10px;
+            padding: 5px 5px;
+        }
+        .buy__button:hover {
+            background-color: #c29747;
+        }
     }
     .app__title {
-      width: 256px;
-      height: 149px;
-      background-color: #e0b973;
-      border-radius: 0px 0px 30px 30px; //поменять
-      text-transform: uppercase;
-      color: $main-font-color;
-      text-align: center;
-      display: flex;
-      vertical-align: middle;
-      font-size: 15px;
-      letter-spacing: 10px;
-      h2 {
-          margin: auto;
-      }
-      span {
-          font-size: 40px;
-          letter-spacing: 6px;
-          margin-top: 30px;
-      }
+        width: 256px;
+        height: 149px;
+        background-color: #e0b973;
+        border-radius: 0px 0px 30px 30px; //поменять
+        text-transform: uppercase;
+        color: $main-font-color;
+        text-align: center;
+        display: flex;
+        vertical-align: middle;
+        font-size: 15px;
+        letter-spacing: 10px;
+        h2 {
+            margin: auto;
+        }
+        span {
+            font-size: 40px;
+            letter-spacing: 6px;
+            margin-top: 30px;
+        }
     }
-  }
+}

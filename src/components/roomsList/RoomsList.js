@@ -84,12 +84,6 @@ const RoomsList = () => {
                 {spinner}
                 {items}
             </div>
-            <div className="buy__container">
-                <h2 className="price__total">Total price: $0</h2>
-                <Link to="/payment" className="buy__button">
-                    Buy
-                </Link>
-            </div>
         </div>
     );
 };

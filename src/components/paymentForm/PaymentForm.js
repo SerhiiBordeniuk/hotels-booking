@@ -20,7 +20,6 @@ const PaymentForm = () => {
             <div className="payment__data">
                 <div className="payment__header">
                     <h1 className="payment__title">Payment</h1>
-                    <p className="payment__total">Total price: $0</p>
                 </div>
                 <Formik
                     initialValues={{
