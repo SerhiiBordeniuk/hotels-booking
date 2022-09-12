@@ -4,13 +4,15 @@ import trash from "../../resources/img/trash.png";
 import Spinner from "../spinner/Spinner";
 
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import {inc, dec} from "../../actions"
 
 const { default: axios } = require("axios");
 
 const RoomsList = () => {
     const [hotelData, setHotelData] = useState([]);
     const [loading, setLoading] = useState(false);
+
 
     useEffect(() => {
         getData();
@@ -23,14 +25,23 @@ const RoomsList = () => {
         setHotelData(res.data);
     };
 
+    // const {hotelsCounter} = useSelector(state => state)
+    const dispatch = useDispatch();
+
     const onDelete = async (id) => {
         const res = await axios
             .delete(`https://6308173c46372013f5762546.mockapi.io/hotels/${id}`)
             .then(setHotelData((data) => data.filter((item) => item.id !==id)));
     };
 
+
+    function TotalPrice(price, quantity){
+        return Number(price * quantity).toLocaleString('en-US');
+    }
+
     const renderItems = (arr) => {
         const items = arr.map((item) => {
+
             if (arr.length === 0) {
                 return <div>Array is empty</div>
             } else {
@@ -41,11 +52,11 @@ const RoomsList = () => {
                         <div className="room__interaction">
                             <div className="room__buttons">
                                 <div className="room__counter">
-                                    <button className="button inc">-</button>
-                                    <p className="counter">1</p>
-                                    <button className="button dec">+</button>
+                                    <button onClick={() => dispatch(dec(item))} className="button dec">-</button>
+                                    <p className="counter">{item.quantity}</p>
+                                    <button onClick={() => dispatch(inc(item))} className="button inc">+</button>
                                 </div>
-                                <div className="rooms__price">{`$${item.price}`}</div>
+                                <div className="rooms__price">{`$${TotalPrice(item.price, item.quantity)}`}</div>
                             </div>
                             <div className="rooms_button_delete">
                                 <input
