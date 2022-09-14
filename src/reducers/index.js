@@ -1,3 +1,5 @@
+
+
 const initialState = {
     cart: [],
     totalPrice: 0,
@@ -9,7 +11,7 @@ const reducer = (state = initialState, action) => {
             let check = false;
             state.cart.map((item, key) => {
                 if (item.id == action.payload.id) {
-                    state.cart[key].price += action.payload.price
+                    // state.cart[key].price += action.payload.price
                     state.cart[key].quantity++;
                     check = true;
                 }
@@ -32,18 +34,20 @@ const reducer = (state = initialState, action) => {
         case "HOTEL_DEC":
             state.cart.map((item, key) => {
                 if (item.id == action.payload.id && state.cart[key].quantity !== 0) {
-                    state.cart[key].price -= action.payload.price
+                    // state.cart[key].price -= action.payload.price
                     state.cart[key].quantity--;
                 }
             });
-            // let quantity = state.cart[action.payload].quantity;
-            // if (quantity > 1) {
-            //     state.cart.quantity--;
-            //     state.cart[action.payload].quantity--;
-            // }
-            // return {
-            //     ...state,
-            // };
+            return {
+                ...state,
+                cart: state.cart.filter((item) => item.quantity !==0)
+            }
+        case "HOTEL_TOTAL":
+            const total = state.cart.reduce((a, b) => a + b.price * b.quantity, 0)
+            return {
+                ...state, 
+                totalPrice: total
+            }
         default:
             return state;
     }

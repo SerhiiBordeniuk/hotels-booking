@@ -1,7 +1,9 @@
 import "./AppHeader.scss";
 import icon from "../../resources/img/icon.png";
 
+
 const AppHeader = () => {
+
     return (
         <div className="app__header">
             <header className="app__header__inner">

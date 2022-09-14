@@ -12,3 +12,9 @@ export const dec = (item) => {
   }
 }
 
+export const hotelTotal = (item) => {
+  return {
+    type: 'HOTEL_TOTAL',
+    payload: item
+  }
+}

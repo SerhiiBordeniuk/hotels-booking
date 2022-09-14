@@ -2,17 +2,18 @@ import "./RoomsList.scss";
 import trash from "../../resources/img/trash.png";
 
 import Spinner from "../spinner/Spinner";
+import RoomItem from "../roomItem/RoomItem";
 
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {inc, dec} from "../../actions"
+import { useDispatch } from "react-redux";
+import { hotelTotal } from "../../actions";
 
 const { default: axios } = require("axios");
 
 const RoomsList = () => {
     const [hotelData, setHotelData] = useState([]);
     const [loading, setLoading] = useState(false);
-
+    const dispatch = useDispatch();
 
     useEffect(() => {
         getData();
@@ -20,57 +21,21 @@ const RoomsList = () => {
 
     const getData = async () => {
         setLoading(true);
-        const res = await axios.get("https://6308173c46372013f5762546.mockapi.io/hotels")
+        const res = await axios.get("https://6308173c46372013f5762546.mockapi.io/hotels");
         setLoading(false);
         setHotelData(res.data);
+        dispatch(hotelTotal())
     };
-
-    // const {hotelsCounter} = useSelector(state => state)
-    const dispatch = useDispatch();
 
     const onDelete = async (id) => {
         const res = await axios
             .delete(`https://6308173c46372013f5762546.mockapi.io/hotels/${id}`)
-            .then(setHotelData((data) => data.filter((item) => item.id !==id)));
+            .then(setHotelData((data) => data.filter((item) => item.id !== id)))
     };
-
-
-    function TotalPrice(price, quantity){
-        return Number(price * quantity).toLocaleString('en-US');
-    }
 
     const renderItems = (arr) => {
         const items = arr.map((item) => {
-
-            if (arr.length === 0) {
-                return <div>Array is empty</div>
-            } else {
-                return (
-                    <li className="room__item" key={item.id}>
-                        <img className="room__img" src={item.image} alt="rooms photo" />
-                        <div className="room__title">{item.title}</div>
-                        <div className="room__interaction">
-                            <div className="room__buttons">
-                                <div className="room__counter">
-                                    <button onClick={() => dispatch(dec(item))} className="button dec">-</button>
-                                    <p className="counter">{item.quantity}</p>
-                                    <button onClick={() => dispatch(inc(item))} className="button inc">+</button>
-                                </div>
-                                <div className="rooms__price">{`$${TotalPrice(item.price, item.quantity)}`}</div>
-                            </div>
-                            <div className="rooms_button_delete">
-                                <input
-                                    key={item.id}
-                                    onClick={() => onDelete(item.id)}
-                                    className="trash__icon"
-                                    type="image"
-                                    src={trash}
-                                />
-                            </div>
-                        </div>
-                    </li>
-                );
-            }
+            return <RoomItem key={item.id} item={item} onDelete={onDelete} />;
         });
 
         return <ul className="rooms__grid">{items}</ul>;
