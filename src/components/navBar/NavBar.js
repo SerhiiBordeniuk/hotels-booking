@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const NavBar = () => {
-
-    const totalPrice = useSelector(state => state.totalPrice)
+    const totalPrice = useSelector((state) => state.totalPrice);
 
     return (
         <div className="app__navbar">
@@ -24,7 +23,9 @@ const NavBar = () => {
                 </Link>
             </div>
             <div className="nav__cart">
-                <h2 className="price__total">Total price: ${totalPrice}</h2>
+                <h2 className="price__total">
+                    Total price: <br /> ${totalPrice}
+                </h2>
                 <Link to="/payment" className="buy__button">
                     Buy
                 </Link>

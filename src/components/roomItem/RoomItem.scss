@@ -60,6 +60,9 @@
                 }
             }
             .rooms__price {
+                display: flex;
+                justify-content: center;
+                align-items: center;
                 color: #ffffff;
                 font-family: "Montserrat";
                 font-weight: 700;
@@ -67,12 +70,28 @@
                 line-height: 30px;
                 background-color: #e0b973;
                 border-radius: 10px;
-                padding: 24px 51px;
+                width: 140px;
+                height: 50px;
             }
         }
         .rooms_button_delete {
             display: flex;
             align-items: center;
         }
+    }
+    .buy__container {
+        border-radius: 15px;
+        padding: 25px;
+        color: #ffffff;
+        font-family: "Montserrat";
+        background-color: $main-font-color;
+        margin: 5% 10%;
+        display: flex;
+        flex-direction: column;
+        align-items: self-end;
+    }
+    .trash__icon {
+        width: 65px;
+        height: auto;
     }
 }
